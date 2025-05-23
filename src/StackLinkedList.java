@@ -9,7 +9,13 @@ public class StackLinkedList implements Stack{
         top.setNext(previousTop);
     }
     @Override
-    public Object pop() {
+    public Object pop()throws MyEmptyStackException {
+        if (top == null){
+            throw new MyEmptyStackException("Stack is empty.");
+
+        }
+
+
         Object tempData = top.getData();
         top = top.getNext();
         return tempData;
